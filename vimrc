@@ -27,6 +27,7 @@ set noerrorbells
 set spell
 set showcmd
 set laststatus=2
+set formatoptions=t1
 let mapleader = ","
 noremap <leader>s :source $MYVIMRC<CR>
 set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
@@ -34,4 +35,7 @@ set spellfile=$HOME/dotfiles/vim/spell/en.utf-8.add
 autocmd Filetype java set makeprg=javac\ %
 autocmd Filetype java setl efm=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 map <F2> :Vex<CR>
-map <F9> :make<Return>:cwindow<Return>
+nnoremap <F9> :write<Return>:make<Return>:cwindow<Return>
+inoremap <F9> <C-O>:write<Return>:make<Return>:cwindow<Return>
+
+nnoremap <leader>s ea<C-X><C-S>
